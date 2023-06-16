@@ -1,16 +1,16 @@
-#include <stdio.h>  
+#include<stdio.h>  
 
 int main()  
 {    
     char op;  
     int a,b;   
     float res;    
-    printf (" Enter the first number: ");  
-    scanf("%d", &a);  
-    printf (" Enter the operator:");  
-    scanf("%s", &op); 
-    printf (" Enter the second number: ");  
-    scanf("%d", &b);   
+    printf("Enter the first number: ");  
+    scanf("%d",&a);  
+    printf("Enter the operator: ");  
+    scanf("%c",&op); 
+    printf("Enter the second number: ");  
+    scanf("%d",&b);   
       
     if (op == '+')  
     {  
@@ -34,15 +34,17 @@ int main()
     {  
         if (b == 0)    
         {  
-            printf (" \n Divisor cannot be zero. Please enter another value ");  
+            printf (" \n Divisor cannot be zero. Please enter another value. ");  
             scanf ("%d", &b);        
         }  
         res = a / b;  
         printf (" Division of %d and %d is: %.2f\n", a, b, res);  
-    }  
+    } 
+
     else  
     {  
         printf(" \n You have entered wrong inputs.\n");  
-    }  
+    } 
+    
     return 0;  
 }  
