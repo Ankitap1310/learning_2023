@@ -7,7 +7,7 @@ int main()
     int a,b,c;
     printf("Enter the two numbers : ");
     scanf("%d%d", &a, &b);
-    c=biggest(a,b);
+    c = biggest(a,b);
     printf("Biggest of two numbers : %d\n",c);
     return 0;
 }
