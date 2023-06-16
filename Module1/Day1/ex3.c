@@ -13,8 +13,8 @@ int main()
     scanf("%d%d%d",&phy,&math,&chem);
     total = phy+math+chem;
     per = total/3.0;
-    
-       printf("\nRoll No : %d\nName of the student : %s %s\n",roll,fname,lname);
-       printf("Marks in Physics : %d\nMarks in Math : %d\nMarks in Chemistry : %d\n",phy,math,chem);
-       printf("Total = %d\nPercentage = %5.2f\n",total,per);
+    printf("\nRoll No : %d\nName of the student : %s %s\n",roll,fname,lname);
+    printf("Marks in Physics : %d\nMarks in Math : %d\nMarks in Chemistry : %d\n",phy,math,chem);
+    printf("Total = %d\nPercentage = %5.2f\n",total,per);
+    return 0;
 }
