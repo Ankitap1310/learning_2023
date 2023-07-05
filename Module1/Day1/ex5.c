@@ -1,36 +1,34 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int bit_operations(int num,int oper_type);
-
-int bit_operations(int num,int oper_type)
+int bit_operations(int num, int operator_type)
 {
-    if (oper_type == 1)  
-    {
-        printf("%d with 1st bit set: ",num);  
-        return (num | (1 << (1-1)));  
-    }  
-      
-    else if (oper_type == 2)  
-    {  
-        printf("%d with 31st bit cleared: ",num);
-        return (num & (~(1 << (31 - 1)))); 
-    }  
-      
-    else if (oper_type == 3)  
-    {  
-        printf("%d with 16th bit toggled: ",num);
-        return (num ^ (1 << (16 - 1))); 
-    }  
+   if (operator_type == 1)
+   { // Set 1st bit
+      num |= 1;
+   }
+   else if (operator_type == 2)
+   {                       // Clear 31st bit
+      num &= (~(1 << 31)); // Give a negative value
+   }
+   else if (operator_type == 3)
+   { // Toggle 16th bit
+      num ^= 1 << 16;
+   }
 
+   return num;
 }
 
 int main()
 {
-    int n,option,res;
-    printf("Enter the number: ");
-    scanf("%d",&n);
-    printf("Enter the option to perform operation: ");
-    scanf("%d",&option);
-    printf("%d\n",bit_operations(n,option));
-    return 0;
+   int num, operator_type, result;
+   printf("Enter an integer (32 bits): ");
+   scanf("%d", &num);
+
+   printf("Enter operation type (1, 2, or 3): ");
+   scanf("%d", &operator_type);
+
+   result = bit_operations(num, operator_type);
+   printf("Result: %d\n", result);
+
+   return 0;
 }

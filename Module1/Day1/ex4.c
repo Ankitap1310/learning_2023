@@ -1,50 +1,51 @@
-#include<stdio.h>  
+#include <stdio.h>
 
-int main()  
-{    
-    char op;  
-    int a,b;   
-    float res;    
-    printf("Enter the first number: ");  
-    scanf("%d",&a);  
-    printf("Enter the operator: ");  
-    scanf("%c",&op); 
-    printf("Enter the second number: ");  
-    scanf("%d",&b);   
-      
-    if (op == '+')  
-    {  
-        res = a + b;   
-        printf (" Addition of %d and %d is: %f\n", a, b, res);  
-    }  
-      
-    else if (op == '-')  
-    {  
-        res = a - b; 
-        printf (" Subtraction of %d and %d is: %f\n", a, b, res);  
-    }  
-      
-    else if (op == '*')  
-    {  
-        res = a * b;  
-        printf (" Multiplication of %d and %d is: %f\n", a, b, res);  
-    }  
-      
-    else if (op == '/')  
-    {  
-        if (b == 0)    
-        {  
-            printf (" \n Divisor cannot be zero. Please enter another value. ");  
-            scanf ("%d", &b);        
-        }  
-        res = a / b;  
-        printf (" Division of %d and %d is: %.2f\n", a, b, res);  
-    } 
+int main()
+{
+   float num1, num2, result;
+   char operator;
 
-    else  
-    {  
-        printf(" \n You have entered wrong inputs.\n");  
-    } 
-    
-    return 0;  
+   printf("Enter the First number: ");
+   scanf("%f", &num1);
+
+   printf("Enter the Operator (+, -, *, /): ");
+   scanf(" %c", &operator);
+
+   printf("Enter the Second number: ");
+   scanf("%f", &num2);
+
+   switch (operator)
+   {
+   case '+':
+      result = num1 + num2;
+      printf("Result: %.2f\n", result);
+      break;
+
+   case '-':
+      result = num1 - num2;
+      printf("Result: %.2f\n", result);
+      break;
+
+   case '*':
+      result = num1 * num2;
+      printf("Result: %.2f\n", result);
+      break;
+
+   case '/':
+      if (num2 != 0)
+      {
+         result = num1 / num2;
+         printf("Result: %.2f\n", result);
+      }
+      else
+      {
+         printf("Error: Division by zero is not allowed.\n");
+      }
+      break;
+      
+   default:
+      printf("Error: Invalid operator.\n");
+   }
+
+   return 0;
 }  
