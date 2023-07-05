@@ -1,28 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int sum(int a[], int size);
+int main() {
+    int size;
 
-int sum(int a[], int size)
-{
-    int sum=0,*p;
-    for(p = &a[0]; p < &a[size] ; p += 2)
-    {
-        sum += *p;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int* a = (int*)malloc(size * sizeof(int));
+
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < size; i++) {
+        printf("Enter element %d: ", i);
+        scanf("%d", &a[i]);
     }
-    return sum;
-}
 
-int main()
-{
-    int n,arr[n],res;
-    printf("Enter the size of array: ");
-    scanf("%d",&n);
-    printf("Enter the elements of array:\n");
-    for(int i=0;i<n;i++)
-    {
-        scanf("%d",&arr[i]);
+    int sum = 0;
+    for (int i = 0; i < size; i += 2) {
+        sum += a[i];
     }
-    res=sum(arr,n);
-    printf("Sum of alternate elements of a given array:%d\n",res);
+
+    printf("Sum of alternate elements: %d\n", sum);
+
+    free(a);
+
     return 0;
 }
